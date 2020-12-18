@@ -1,0 +1,21 @@
+// Styling for the footer
+footer {
+  text-align: center;
+  font-size: 0.9rem;
+  font-family: $headings-font-family;
+  background-color: #212528;
+  color: #fff;
+}
+
+.footer-copyright {
+  padding: 35px;
+  border-top: 0.5px solid #545454;
+}
+
+.hr-styled {
+  border-top: 0.5px solid #545454;
+}
+
+.footer-social-media {
+  padding-bottom: 30px;
+}

@@ -1,0 +1,171 @@
+// Styling for the portfolio section
+#portfolio {
+  .portfolio-item {
+    max-width: 25rem;
+    margin-left: auto;
+    margin-right: auto;
+    .portfolio-link {
+      position: relative;
+      display: block;
+      margin: 0 auto;
+      .portfolio-hover {
+        display: flex;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: fade-out($primary, 0.1);
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity ease-in-out 0.25s;
+        .portfolio-hover-content {
+          font-size: 1.25rem;
+          color: white;
+        }
+      }
+      &:hover {
+        .portfolio-hover {
+          opacity: 1;
+        }
+      }
+    }
+    .portfolio-caption {
+      padding: 1.5rem;
+      text-align: center;
+      background-color: $white;
+      .portfolio-caption-heading {
+        font-size: 1.5rem;
+        font-family: $headings-font-family;
+        font-weight: $headings-font-weight;
+        margin-bottom: 0;
+      }
+      .portfolio-caption-subheading {
+        font-style: italic;
+        font-family: $subheadings-font-family;
+      }
+    }
+  }
+}
+
+.img-how-to {
+  // border-radius: 50%;
+  width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+}
+
+.how-to-icon {
+  background-color: #fff;
+}
+
+.content {
+  padding-top: 15px;
+}
+
+@media (max-width: 576px) {
+  .how-to-icon {
+    background-color: rgb(240, 240, 1);
+    display: none;
+  }
+
+  .portfolio-caption-heading {
+    text-align: left;
+  }
+
+  #how-to-arrow {
+    float: right;
+  }
+
+  .collapsible {
+    font-size: 20px !important;
+  }
+
+  .active,
+  .collapsible:hover {
+  }
+
+  .collapsible:after {
+    // content: "\002B";
+    color: white;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+  }
+
+  .active:after {
+    // content: "\2212";
+  }
+
+  .content {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
+
+  // arrow icon section
+  $arrow-size: 20px;
+  $arrow-width: 2px;
+  $arrow-color: #333;
+  .arrow-open-close {
+    position: relative;
+    width: $arrow-size;
+    height: 20px;
+    cursor: pointer;
+    &:before,
+    &:after {
+      transition: 0.15s all ease-in-out;
+      position: absolute;
+      content: "";
+      width: 54%;
+      height: $arrow-width;
+      background: $arrow-color;
+      top: 49%;
+      border-radius: 5px;
+    }
+
+    &:before {
+      transform: rotate(-150deg);
+      left: 0;
+    }
+    &:after {
+      transform: rotate(150deg);
+      right: 0;
+    }
+  }
+
+  .toggle-btn {
+    cursor: pointer;
+    max-width: 130px;
+    margin-left: auto;
+    margin-right: auto;
+    // margin-bottom: 1em;
+    float: right;
+
+    .arrow-open-close {
+      float: left;
+      margin: 6px 10px 0 0;
+    }
+    .toggle-wording {
+      float: left;
+      font-size: 1.2em;
+      color: $arrow-color;
+      text-transform: uppercase;
+    }
+
+    &.hide-toggle {
+      .arrow-open-close {
+        &:before {
+          transform: rotate(-210deg);
+          left: 0;
+        }
+        &:after {
+          transform: rotate(210deg);
+          right: 0;
+        }
+      }
+    }
+  }
+}

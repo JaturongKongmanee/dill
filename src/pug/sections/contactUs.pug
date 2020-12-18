@@ -1,0 +1,25 @@
+// Contact
+section#contact.page-section
+    .container
+        .text-center
+            h2.section-heading.text-uppercase ติดต่อเรา
+            h3.section-subheading.text-muted Contact us.
+        form#contactForm(name='sentMessage', novalidate='novalidate')
+            .row.align-items-stretch.mb-5
+                .col-md-6
+                    .form-group
+                        input#name.form-control(type='text', placeholder='ชื่อ-นามสกุล *', required='required', data-validation-required-message='กรุณากรอกชื่อ-นามสกุล')
+                        p.help-block.text-danger
+                    .form-group
+                        input#email.form-control(type='email', placeholder='อีเมลล์ *', required='required', data-validation-required-message='กรุณากรอกอีเมลล์')
+                        p.help-block.text-danger
+                    .form-group.mb-md-0
+                        input#phone.form-control(type='tel', placeholder='เบอร์โทรศัพท์ *', required='required', data-validation-required-message='กรุณาใส่เบอร์โทรศัพท์')
+                        p.help-block.text-danger
+                .col-md-6
+                    .form-group.form-group-textarea.mb-md-0
+                        textarea#message.form-control(placeholder='อยากพูดคุยอะไรกับเรา เชิญพิมพ์เลยจ้า *', required='required', data-validation-required-message='กรุณาใส่ข้อความ')
+                        p.help-block.text-danger
+            .text-center
+                    #success
+                    button#sendMessageButton.btn.btn-primary.btn-xl.text-uppercase(type='submit') ส่งข้อความ
